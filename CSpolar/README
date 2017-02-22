@@ -1,0 +1,49 @@
+Josh Stachnik - 2012
+Univ of Colorado - now at Lehigh Univ
+
+Documentation is a work in progress....
+
+
+
+CSpolar.pl requires the Math::FFT perl package.
+
+sampled_wfs_orid_1113_surf.tzne is an example time series, subset around
+the surface wave arrivals. 
+
+The polarization analysis can simply be run by:
+
+1) cd example/
+
+../CSpolar.pl -f sampled_wfs_orid_1113_surf.tzne -o junk.out -v
+
+The output to the screen should be:
+
+Program set to grossly spew debugs
+Analysis window length: 6199 samples 
+ZZXCOR 32768 32768 -- 95.47808407,-83.33949737,-0.00290993,95.47808407 -
+Looping over back-azimuth ...
+Czr_max: 0.962558443766644 Czr_az: 167 Czr2_max: 2.1561285804623 Czr2_az: 163 
+
+The last line indicates that the azimuth with highest value for Eq. 2 is 167 degrees
+and the azimuth with highest value for Czr* (Eq. 3) is 163 degrees.
+
+The first few lines of junk.out should be:
+
+0.000000 0.000000 95.478084 -197.030990 468.739903 -0.931358 -2.063625
+0.000000 1.000000 95.478084 -195.959862 468.523228 -0.926509 -2.052407
+0.000000 2.000000 95.478084 -194.829044 468.367904 -0.921315 -2.040563
+0.000000 3.000000 95.478084 -193.638878 468.274118 -0.915779 -2.028098
+0.000000 4.000000 95.478084 -192.389729 468.241985 -0.909903 -2.015015
+0.000000 5.000000 95.478084 -191.081975 468.271544 -0.903689 -2.001318
+0.000000 6.000000 95.478084 -189.716017 468.362759 -0.897142 -1.987011
+0.000000 7.000000 95.478084 -188.292268 468.515520 -0.890264 -1.972099
+
+
+2) To plot the radial component image:
+../plot_radial_image.sh  (assumes input file of radial_2.txt)
+
+3) To plot the correlation values:
+../plot_Czr.sh junk.out
+
+Similar to figure 2c in the paper. 
+

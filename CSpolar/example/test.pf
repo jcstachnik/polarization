@@ -1,0 +1,15 @@
+dbname maule-assoc   	# input database name
+orid    1       	# orid number
+staname U68B    	# station name
+phase   P       	# phase name (arrival/assoc/origin join)
+chans   HHZ HHN HHE # chan to do
+filter BW 0.8 4 3.0 4 ; SQ ; AVE 10.0 0.0 ; SQRT
+hp      0.1     	# highpass bounds (> 0)
+lp      4.0     	# lowpass bounds 
+npole   3       	# Number of BW poles 
+pretime  20      	# pre-singal time length (sec)
+posttime 50     	# post-signal time length (sec)
+pertaper 0.2  		#  (fractional) percent taper
+normal   2          # normalize amps (0=max(Z),1=max(ZNE),2=no
+wffile out.file	    # output waveform data
+#tpick 1270814480.13000
